@@ -25,9 +25,7 @@ import au.com.dius.pact.provider.junitsupport.loader.PactBrokerAuth;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) // Starts the real provider server on a random port
 @Provider("CoursesCatalogue") // Must match the name of the provider in the contract
-@PactFolder("pacts") // The default value of the url (pacts) is src/main/pacts
-//@PactBroker(url="https://rahulshettyacademy.pactflow.io/",
-//authentication= @PactBrokerAuth(token="DU4SAEwbk3UXXTr05cF1Kg"))
+@PactFolder("src/main/java/pacts") // The default value of the url (pacts) is src/main/pacts
 public class PactProviderTest {
 
     /**

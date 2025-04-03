@@ -70,9 +70,20 @@ public class PactProviderTest {
     }
 
     /**
-     * The `@State` annotation in Pact testing defines a provider's state as required by
-     * the consumer for contract testing. The `coursesExist` method sets up the "courses
-     * exist" state, ensuring the provider is ready for the test */
+     * The `@State` annotation in Pact testing is used to define the states
+     * that the provider needs to be in so the consumer's contract can be validated.
+     * The `coursesExist` method sets up the provider for the state "courses exist",
+     * ensuring it is ready for the consumer's expectations during the test.
+     * <p>
+     * Note:
+     * - The "providerStates" property in the consumer contract specifies this state name.
+     * - The `StateChangeAction.SETUP` ensures the provider is initialized appropriately
+     *   prior to the interaction test.
+     * - The `StateChangeAction.TEARDOWN` ensures cleanup or rollback after the test if required.
+     * <p>
+     * Ensure the state name specified here ("courses exist") matches the name given
+     * in the consumer contract's `providerStates` property.
+     */
     @State(value = "courses exist", action = StateChangeAction.SETUP)
     public void coursesExist() {
     }

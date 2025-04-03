@@ -27,10 +27,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rahulshettyacademy.repository.LibraryRepository;
 import com.rahulshettyacademy.service.LibraryService;
 
-
 @RestController
 public class LibraryController {
-
     @Autowired
     LibraryRepository repository;
 
@@ -41,9 +39,6 @@ public class LibraryController {
     LibraryService libraryService;
     @Autowired
     Greeting greeting;
-//	@Autowired
-//	SpecificProduct specificProduct;
-
 
     String baseUrl = "http://localhost:8181";
 
@@ -147,7 +142,6 @@ public class LibraryController {
 
 
     }
-
 
     @CrossOrigin
     @GetMapping("/getProductPrices")

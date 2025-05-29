@@ -120,7 +120,6 @@ public class LibraryController {
 
     @GetMapping("/getProductDetails/{name}")
     public SpecificProduct getProductFullDetails(@PathVariable(value = "name") String name) throws JsonMappingException, JsonProcessingException {
-
         SpecificProduct specificProduct = new SpecificProduct();
         TestRestTemplate restTemplate = new TestRestTemplate();
         Library lib = repository.findByName(name);
@@ -139,8 +138,6 @@ public class LibraryController {
 
         }
         return specificProduct;
-
-
     }
 
     @CrossOrigin
